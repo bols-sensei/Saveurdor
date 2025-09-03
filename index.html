@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saveur d'Or Nos Délices</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+body{
+    margin:0;
+    font-family:Poppins,sans-serif;
+    background: url('images/b3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color:#fff;
+}
+
+header{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    color:#dda202;
+    background: transparent;
+    position: relative;
+}
+
+header h1{
+    font-family:'Aboreto';
+    font-size:2rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.carousel{
+    margin-top:20px;
+    width:100%;
+    height:80vh;
+    overflow:hidden;
+    position:relative;
+}
+
+.carousel .list{
+    height:100%;
+    position:relative;
+    z-index:2;
+}
+
+.carousel .item{
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.carousel .item.active{
+    display:flex;
+}
+
+.main-content{
+    display:grid;
+    grid-template-columns:1fr 400px;
+    border-radius:20px;
+    padding:50px;
+    gap:20px;
+    max-width:1200px;
+    align-items:center;
+}
+
+.content h2{
+    font-family:'Aboreto';
+    font-size:2rem;
+    margin-bottom:10px;
+    color:#dda202;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.content .price{
+    font-size:1.5rem;
+    margin-bottom:10px;
+    color:#9c6e21;
+}
+
+.content .description{
+    font-size:1rem;
+    margin-bottom:15px;
+    color:#fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background: linear-gradient(90deg,#7e4509,#6c6233);
+    color:#fff;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.image img{
+    max-width:100%;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+.arrows{
+    position:absolute;
+    bottom:20px;
+    right:20px;
+    display:flex;
+    gap:10px;
+    z-index:5;
+}
+
+.arrows button{
+    padding:10px 15px;
+    font-size:1.2rem;
+    border:none;
+    border-radius:50%;
+    background:#dda202;
+    color:#070402;
+    cursor:pointer;
+}
+
+.arrows button:hover{
+    background:#9c6e21;
+    transform:scale(1.1);
+}
+
+@media(max-width:1023px){
+    .main-content{
+        grid-template-columns:1fr;
+        padding:20px;
+    }
+    .content h2{font-size:1.5rem;}
+    .content .price{font-size:1.2rem;}
+    button{padding:10px 25px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Saveur d'Or  Nos Délices</h1>
+</header>
+
+<section class="carousel">
+    <div class="list">
+        <!-- 10 Produits -->
+        <article class="item active">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Chocolate Cake</h2>
+                    <p class="price">$5</p>
+                    <p class="description">Moelleux et fondant, cœur chocolat noir intense.</p>
+                    <button onclick="openWhatsApp('Chocolate Cake',5)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product1.png" alt="Chocolate Cake"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Strawberry Tart</h2>
+                    <p class="price">$6</p>
+                    <p class="description">Tarte aux fraises fraîches avec crème onctueuse.</p>
+                    <button onclick="openWhatsApp('Strawberry Tart',6)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product2.png" alt="Strawberry Tart"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Vanilla Cupcake</h2>
+                    <p class="price">$4</p>
+                    <p class="description">Cupcake moelleux à la vanille avec glaçage crémeux.</p>
+                    <button onclick="openWhatsApp('Vanilla Cupcake',4)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product3.png" alt="Vanilla Cupcake"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Matcha Latte</h2>
+                    <p class="price">$5</p>
+                    <p class="description">Douceur et parfum subtil de thé vert.</p>
+                    <button onclick="openWhatsApp('Matcha Latte',5)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product4.png" alt="Matcha Latte"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Caramel Macaron</h2>
+                    <p class="price">$3</p>
+                    <p class="description">Petite douceur caramélisée à souhait.</p>
+                    <button onclick="openWhatsApp('Caramel Macaron',3)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product5.png" alt="Caramel Macaron"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Berry Muffin</h2>
+                    <p class="price">$4</p>
+                    <p class="description">Muffin aux fruits rouges moelleux.</p>
+                    <button onclick="openWhatsApp('Berry Muffin',4)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product6.png" alt="Berry Muffin"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Lemon Tart</h2>
+                    <p class="price">$5</p>
+                    <p class="description">Tarte acidulée au citron.</p>
+                    <button onclick="openWhatsApp('Lemon Tart',5)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product7.png" alt="Lemon Tart"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Pecan Pie</h2>
+                    <p class="price">$6</p>
+                    <p class="description">Pâtisserie riche et gourmande aux noix de pécan.</p>
+                    <button onclick="openWhatsApp('Pecan Pie',6)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product8.png" alt="Pecan Pie"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Chocolate Eclair</h2>
+                    <p class="price">$5</p>
+                    <p class="description">Éclair moelleux avec crème chocolat.</p>
+                    <button onclick="openWhatsApp('Chocolate Eclair',5)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product9.png" alt="Chocolate Eclair"></div>
+            </div>
+        </article>
+        <article class="item">
+            <div class="main-content">
+                <div class="content">
+                    <h2>Fruit Tart</h2>
+                    <p class="price">$4</p>
+                    <p class="description">Tarte fraîche avec fruits de saison.</p>
+                    <button onclick="openWhatsApp('Fruit Tart',4)">Commander</button>
+                </div>
+                <div class="image"><img src="images/product10.png" alt="Fruit Tart"></div>
+            </div>
+        </article>
+    </div>
+
+    <div class="arrows">
+        <button id="prev">&#60;</button>
+        <button id="next">&#62;</button>
+    </div>
+</section>
+
+<script>
+const whatsappNumber = '+243998407062';
+function openWhatsApp(productName, price){
+    const message = `Bonjour, je souhaite commander: ${productName} au prix de $${price}`;
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
+}
+
+// Slider simplifié: un item à la fois
+let next = document.getElementById('next');
+let prev = document.getElementById('prev');
+let items = document.querySelectorAll('.carousel .item');
+let countItem = items.length;
+let active = 0;
+
+function showItem(index){
+    items.forEach((item,i)=>{
+        item.classList.toggle('active', i===index);
+    });
+}
+
+next.onclick = () => {
+    active = (active+1) % countItem;
+    showItem(active);
+}
+
+prev.onclick = () => {
+    active = (active-1+countItem) % countItem;
+    showItem(active);
+}
+
+// autoplay
+let autoPlay = setInterval(()=>{ next.click(); },5000);
+
+// afficher le premier item au départ
+showItem(active);
+</script>
+
+</body>
+</html>
